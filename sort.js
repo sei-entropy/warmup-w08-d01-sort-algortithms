@@ -34,6 +34,26 @@ function bubble(a) {
   return a;
 }
 console.log(bubble([12, 7, 3, 9, 15]));
+//Merge Sort 
+function mergesort(left, right) {
+  //defien
+  let A = 0;
+  let B = 0;
+  let results = [];
+  while (A < left.length || B < right.length) {
+    if (A === left.length) {
+      results.push(right[B]);
+      B++;
+    } else if (B === right.length || left[A] <= right[B]) {
+      results.push(left[A]);
+      A++;
+    } else {
+      results.push(right[B]);
+      B++;
+    }
+  }
+  return results;
+}
 //Quicksort
 let items = [5,3,7,6,2,9];
 function swap(items, leftIndex, rightIndex){
