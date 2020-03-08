@@ -13,7 +13,20 @@ let bubbleSort = (inputArr) => {
     return inputArr;
 };
 
+//2- Insertion
 
+const insertion_Sort = (nums) => {
+    for (let i = 1; i < nums.length; i++) {
+      let j = i - 1
+      let temp = nums[i]
+      while (j >= 0 && nums[j] > temp) {
+        nums[j + 1] = nums[j]
+        j--
+      }
+      nums[j+1] = temp
+    }
+    return nums
+  }
 
 //3-Merge
 
@@ -66,7 +79,3 @@ function quick_Sort(origArray) {
 		return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
 	}
 }
-var myArray = [3, 0, 2, 5, -1, 4, 1 ];
-console.log("Original array: " + myArray);
-var sortedArray = quick_Sort(myArray);
-console.log("Sorted array: " + sortedArray);
