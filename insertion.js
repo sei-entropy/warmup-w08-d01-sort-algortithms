@@ -74,3 +74,43 @@ function merge(node1, node2) {
 }
 
 console.log(mergeSort([1, 9, 10, 8]));
+
+// Create function
+function quickSortBasic(array) {
+    if (array.length < 2) {
+        return array;
+    }
+    //declare veriables
+    let pivot = array[0];
+    let lesserArray = [];
+    let greaterArray = [];
+    //Create for loop for array
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] > pivot) {
+            greaterArray.push(array[i]);
+        } else {
+            lesserArray.push(array[i]);
+        }
+    }
+    //retern and marge by using ==> .contact
+    return quickSortBasic(lesserArray).concat(
+        pivot,
+        quickSortBasic(greaterArray)
+    );
+}
+/************************************************************************/
+// "the Math.random() function returns a floating-point"
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+let arr = [];
+//initialize a random integer unsorted array
+for (let i = 0; i < 10; i++) {
+    arr.push(getRandomInt(1, 100));
+}
+console.log("Unsorted array: ");
+//printing unsorted array
+console.log(arr);
+arr = quickSortBasic(arr, 0, arr.length - 1);
+console.log("Sorted array: ");
+console.log(arr);
