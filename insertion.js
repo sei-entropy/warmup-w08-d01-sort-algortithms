@@ -22,3 +22,29 @@ function insertionSort() {
 }
 
 console.log(insertionSort());
+
+function bubbleSort() {
+    // Array to be sorted
+    const arr = [8, 3, 1, 7];
+
+    // get array length
+    const len = arr.length;
+    // Iterate over array
+    for (let i = 0; i < len; i++) {
+        // loop over an array and make swaps between adjacent elements based on their value
+        for (let j = 0; j < len; j++) {
+            // check adjacent items to determine if they need to be swapped or not.
+            if (arr[j] > arr[j + 1]) {
+                // make a tmp var (to hold the value when making the swap between elemnts)
+                let tmp = arr[j];
+                // move the smallest element to the index on the left (j) and the larger to right (j+1)
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+        }
+    }
+    // return the sorted array
+    return arr;
+}
+
+console.log(bubbleSort());
