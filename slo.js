@@ -23,8 +23,8 @@ function bubbleSort(array) {
 let array = [12, 11, 15, 10, 9, 1, 2, 3, 13, 14, 4, 5, 6, 7, 8];
 bubbleSort(array);
 alert(array);
-////////////////
-
+////////////////////////////////////////////
+////////////////////////////////////////////
 //insertion
 function insertionSort(array) {
   // start at the first index and iterate through to the end
@@ -49,8 +49,8 @@ function insertionSort(array) {
 let array = [12, 11, 15, 10, 9, 1, 2, 3, 13, 14, 4, 5, 6, 7, 8];
 insertionSort(array);
 alert(array);
-
-/////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
 //merge
 let array = [12, 11, 15, 10, 9, 1, 2, 3, 13, 14, 4, 5, 6, 7, 8];
 mergeSort(array, 0, array.length - 1);
@@ -112,9 +112,8 @@ function merge(array, start, middle, end) {
   while (rightIndex < rightArrayLength)
     array[currentIndex++] = rightArray[rightIndex++];
 }
-
 ////////////////////////////////////////////
-
+////////////////////////////////////////////
 //Quick
 function quickSort(array, startIndex, endIndex) {
   // verify that the start and end index have not overlapped
@@ -157,3 +156,4 @@ function partition(array, startIndex, endIndex) {
 let array = [12, 11, 15, 10, 9, 1, 2, 3, 13, 14, 4, 5, 6, 7, 8];
 quickSort(array, 0, array.length - 1);
 alert(array);
+////////////////////////////////////////////
