@@ -48,3 +48,29 @@ function bubbleSort() {
 }
 
 console.log(bubbleSort());
+
+function mergeSort(arr) {
+    //get middle index of array
+    const mid = Math.floor(arr.length / 2);
+    // get left section from leftmost index of array
+    const subLeft = mergeSort(arr.slice(0, mid));
+    // get right section from rightmost index of array
+    const subRight = mergeSort(arr.slice(mid));
+
+    // call the merge function with the two sub arrays
+    return merge(subLeft, subRight);
+}
+
+// Function to merge the two sub arrays
+function merge(node1, node2) {
+    // inititalize empty array that will hold the result of merging both arrays
+    const result = [];
+    // Iterate over both sub arrays
+    while (node1.length > 0 && node2.length > 0)
+        // push the element of the smallest first array
+        result.push(node1[0] < node2[0] ? node1.shift() : node2.shift());
+    // concat both arrays
+    return result.concat(node1.length ? node1 : node2);
+}
+
+console.log(mergeSort([1, 9, 10, 8]));
